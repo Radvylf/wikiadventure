@@ -1,38 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>WikiAdventure</title>
+        <title>Wikiadventure</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Mulish:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
         
         <link rel="stylesheet" href="css/styles.css"/>
     </head>
     
     <body>
-        <h1>WikiAdventure</h1>
+        <header>
+            <h1>Wikiadventure</h1>
+            <h2>-- 0.0.0</h2>
+        </header>
         
-        <hr>
-        
-        <h2 id="place_name">Forest</h2>
-        
-        <p id="place">You're in a sparse forest, bordering rolling, grassy hills. To your west, the forest grows thicker and continues for miles. You see steam rising from a distant mountain face to your north.</p>
-        
-        <div id="inventory">
-            <hr>
+        <div class="body_cont">
+            <div class="inner_cont">
+                <div id="place_cont">
+                    <div class="topbar">
+                        <div>
+                            <h2><span id="place_color" class="right_arrow">&#x25b6;</span> <span id="place_title"></span></h2>
 
-            <p>Your inventory contains:</p>
-            
-            <ul id="inventory_list">
-                <li>An iron fire poker</li>
-                <li>A branch</li>
-            </ul>
+                            <small class="place_id_cont"><span class="fake_right_arrow"><span class="right_arrow">&#x25b6;</span> </span><span id="place_id"></span></small>
+                        </div>
+
+                        <button id="change_place_btn">Change this place!</button>
+                    </div>
+
+                    <p id="place_writeup"></p>
+
+                    <hr>
+
+                    <div id="inventory">
+                        <p>Your inventory contains:</p>
+
+                        <ul id="inventory_list"></ul>
+
+                        <hr>
+                    </div>
+
+                    <div id="place_options"></div>
+                </div>
+
+                <div id="change_place_cont">
+                    <div class="topbar">
+                        <div>
+                            <p class="change_place_id_cont"><b>ID: </b><span id="change_place_id"></span></p>
+                        </div>
+                        
+                        <div class="topbar_btns">
+                            <button id="cancel_btn">Cancel</button>
+                            <button id="save_btn">Save changes</button>
+                        </div>
+                    </div>
+                    
+                    <div class="color_title">
+                        <button id="change_place_color" class="color_picker" aria-label="Choose color"></button>
+                        
+                        <input type="text" id="change_place_title" placeholder="Starting Point"/>
+                    </div>
+                    
+                    <div class="grow">
+                        <textarea id="change_place_writeup" rows="4" oninput="this.parentNode.dataset.copy = this.value"></textarea>
+                    </div>
+
+                    <hr>
+
+                    <div id="change_place_options"></div>
+                    
+                    <button id="change_place_insert_option">+ Add option</div>
+                </div>
+            </div>
         </div>
         
-        <div id="options">
-            <button>Wander into the forest</button>
-            <button>Walk north</button>
-            <button>Climb nearest hill</button>
+        <div id="color_picker_popup_cont">
+            <div id="color_picker_popup">
+                <div>
+                    <h2><span id="place_color" class="right_arrow">&#x25b6;</span> <span id="place_title">Starting Point</span></h2>
+
+                    <small class="place_id_cont"><span class="fake_right_arrow"><span class="right_arrow">&#x25b6;</span> </span><span id="place_id">starting_point</span></small>
+                </div>
+                
+                
+            </div>
         </div>
+        
+        <script src="js/wikiadv.js"></script>
     </body>
 </html>
