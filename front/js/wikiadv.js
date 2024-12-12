@@ -11,7 +11,7 @@ function load_place(place) {
     while (options_div.firstChild) options_div.removeChild(options_div.firstChild);
     
     for (let option of place.options) {
-        // if (option.conditions.every(test_condition)) {
+        if (option.conditions.every(test_condition)) {
             let option_btn = document.createElement("button");
             let color_span = document.createElement("span");
 
@@ -28,7 +28,7 @@ function load_place(place) {
             }, false);
 
             options_div.appendChild(option_btn);
-        // }
+        }
     }
     
     let change_place_btn = document.getElementById("change_place_btn");
@@ -388,7 +388,7 @@ load_place({
                 type: "go_to",
                 go_to: "alley"
             },
-            condition: {
+            conditions: {
                 type: "none"
             }
         },
@@ -398,7 +398,7 @@ load_place({
                 type: "go_to",
                 go_to: "gallery"
             },
-            condition: {
+            conditions: {
                 type: "item",
                 item_id: "gallery_key",
                 clear_item: false
@@ -410,7 +410,7 @@ load_place({
                 type: "pick_up_item",
                 item_id: "shotgun"
             },
-            condition: {
+            conditions: {
                 type: "item",
                 item_id: "coins",
                 clear_item: true
